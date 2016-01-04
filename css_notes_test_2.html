@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CSS Transition Implementation Test</title>
+	<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
+	<style type="text/css">
+		
+		.main {
+			height: 700px;
+			width: 500px;
+			left: 200px;
+			top: 100px;
+			z-index: 0;
+			background: grey;
+			color: white;
+			font-size: 2em;
+			box-shadow: 10px 10px 10px rgba(100,100,100,0.5);
+			padding: 5px;
+			position: absolute;
+			text-align: center;
+		}
+
+
+		.box-1 {
+			height: 175px;
+			width: 175px;
+			left: 675px;
+			top: 0px;
+			z-index: 5;
+			background: blue;
+			color: white;
+			font-size: 1em;
+		}
+
+		.box-2 {
+			height: 150px;
+			width: 150px;
+			left: 850px;
+			top: 75px;
+			z-index: 15;
+			color: white;
+			font-size: .85em;
+			background: blue;
+		}
+
+		.box-3 {
+			height: 125px;
+			width: 125px;
+			left: 850px;
+			top: 175px;
+			z-index: 20;
+			font-size: .7em;
+			background: white;
+		}
+
+		.box-4 {
+			height: 180px;
+			width: 180px;
+			left: 695px;
+			top: 150px;
+			z-index: 10;
+			font-size: 1.05em;
+			background: white;
+		}
+
+		.box-5 {
+			height: 170px;
+			width: 170px;
+			left: 750px;
+			top: 250px;
+			z-index: 17;
+			font-size: 1em;
+			background: blue;
+			color: white;
+		}
+
+		.box-6 {
+			height: 190px;
+			width: 190px;
+			left: 920px;
+			top: 200px;
+			z-index: 5;
+			font-size: 1.05em;
+			background: white;
+		}
+
+		.box {
+			box-shadow: 6px 6px 12px rgba(50,50,50,0.5);
+			/*border: 2px solid blue;*/
+			padding: 5px;
+			position: absolute;
+			cursor: pointer;
+			transform: rotate(45deg);
+			transition: width 1s, height 1s, transform 1s, left 1s, top 1s, font-size 1s;
+		}
+
+		.box-transition {
+			transform: rotate(0deg);
+			height: 400px;
+			width: 400px;
+			left: 250px;
+			top: 300px;
+			font-size: 2.25em;
+		}
+
+	</style>
+</head>
+<body>
+	<div class="main">
+		Click on the Notes to trigger a transition:
+	</div>
+	<div>
+		<div class="box box-1">
+			Morbi interdum sed risus ac hendrerit. Curabitur nunc felis, pulvinar quis est nec, hendrerit vulputate urna. Duis id nisi vulputate, pellentesque felis et, pellentesque sapien. Suspendisse sagittis convallis lacus, et.
+		</div>
+
+		<div class="box box-2">
+			Donec a eros vel eros lobortis hendrerit in sit amet ligula. Quisque fermentum enim in leo rutrum interdum. Suspendisse augue dolor, porttitor et felis at, efficitur congue arcu. Morbi eget.
+		</div>
+
+		<div class="box box-3">
+			Fusce suscipit vel lacus venenatis facilisis. Aliquam erat volutpat. Nulla dui felis, aliquet sit amet justo eget, elementum sodales ex. Vestibulum et magna non massa pellentesque ullamcorper. Fusce et ex.
+		</div>
+
+		<div class="box box-4">
+			Proin a velit auctor, ultrices turpis sit amet, ultrices mi. Praesent blandit maximus leo in auctor. Proin ac turpis at leo dictum suscipit. Donec pellentesque odio at nibh congue, in.
+		</div>
+
+		<div class="box box-5">
+			Aliquam semper a augue ac molestie. Quisque nibh nisi, malesuada eget rhoncus non, tempor non risus. Nullam porttitor commodo eleifend. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur.
+		</div>
+
+		<div class="box box-6">
+			Vestibulum id dolor iaculis, lacinia nibh ac, varius lacus. Quisque pretium interdum suscipit. Morbi aliquet risus a ligula tincidunt tristique at congue lorem. Duis ultrices leo mi, ut consectetur tellus.
+		</div>
+
+	</div>
+
+	<script type="text/javascript">
+
+		function card_select() {
+			$('.box').on('click', function(){
+				$('.box').not(this).removeClass('box-transition');
+				$(this).toggleClass('box-transition');
+			});
+		};
+
+		card_select();
+
+	</script>
+</body>
+</html>
